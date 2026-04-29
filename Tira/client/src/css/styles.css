@@ -1,0 +1,22 @@
+.admin-login{
+  width:350px;
+  margin:100px auto;
+  padding:30px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  text-align:center;
+}
+.admin-login input{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.admin-login button{
+  width:95%;
+  padding:10px;
+  background:pink;
+  border:none;
+  color:white;
+}
