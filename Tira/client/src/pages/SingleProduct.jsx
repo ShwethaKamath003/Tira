@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/SingleProduct.css";
+import {baseUrl} from "./urls";
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/products/${id}`)
+      .get(`${baseUrl}products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -38,7 +39,7 @@ function SingleProduct() {
   return (
     <div>
       <img
-        src={`http://localhost:3001/images/${product.file}`}
+        src={`${baseUrl}images/${product.file}`}
         width="300"
       />
 

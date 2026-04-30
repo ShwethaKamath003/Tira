@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/ManageProduct.css";
 import { useNavigate } from "react-router-dom";
-
+import {baseUrl} from "./urls";
 function ManageProducts() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -12,12 +12,12 @@ function ManageProducts() {
   }, []);
 
   const getProducts = async () => {
-    const res = await axios.get("http://localhost:3001/product"); 
+    const res = await axios.get(`${baseUrl}product`); 
     setProducts(res.data);
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3001/products/${id}`); 
+    await axios.delete(`${baseUrl}products/${id}`); 
     alert("Product deleted");
     getProducts();
   };
@@ -44,7 +44,7 @@ function ManageProducts() {
             <tr key={product._id}>
               <td>
                 <img
-                  src={`http://localhost:3001/images/${product.file}`}
+                  src={`${baseUrl}images/${product.file}`}
                   alt={product.name}
                   className="product-img"
                 />

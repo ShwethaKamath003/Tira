@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../css/style.css";
 import { useNavigate } from "react-router-dom";
+import {baseUrl} from "./urls";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ const navigate = useNavigate();
     }
 
     try {
-      const res = await axios.post("http://localhost:3001/register", {
+      const res = await axios.post(`${baseUrl}register`, {
         email,
         phone: mobile,
         password,

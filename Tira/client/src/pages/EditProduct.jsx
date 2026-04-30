@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/editProduct.css";
-
+import {baseUrl} from "./urls";
 function EditProduct() {
   const { id } = useParams(); 
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function EditProduct() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/products/${id}`)
+      .get(`${baseUrl}products/${id}`)
       .then((res) => setProduct(res.data));
   }, [id]);
 
@@ -44,7 +44,7 @@ function EditProduct() {
       formData.append("file", newFile);
     }
 
-    await axios.put(`http://localhost:3001/products/${id}`, formData);
+    await axios.put(`${baseUrl}products/${id}`, formData);
 
     alert("Product updated");
     navigate("/manageproducts");
@@ -86,7 +86,7 @@ function EditProduct() {
         ></textarea>
 {product.file && !newFile && (
   <img
-    src={`http://localhost:3001/images/${product.file}`}
+    src={`${baseUrl}images/${product.file}`}
     alt="Current Product"
     width="120"
   />

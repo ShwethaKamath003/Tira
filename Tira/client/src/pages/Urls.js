@@ -1,0 +1,1 @@
+export const baseUrl="https://tira-2.onrender.com/"

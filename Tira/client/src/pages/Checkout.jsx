@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Checkout.css";
-
+import {baseUrl} from "./urls";
 function Checkout() {
   const navigate = useNavigate();
 
@@ -73,7 +73,7 @@ function Checkout() {
 
     // ---------------- COD ----------------
     if (form.payment === "COD") {
-      await fetch("http://localhost:3001/save-order", {
+      await fetch(`${baseUrl}save-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -105,7 +105,7 @@ function Checkout() {
 
       try {
         const response = await fetch(
-          "http://localhost:3001/create-razorpay-order",
+          `${baseUrl}/create-razorpay-order`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -131,7 +131,7 @@ function Checkout() {
 
           handler: async function (response) {
             try {
-              await fetch("http://localhost:3001/save-order", {
+              await fetch(`${baseUrl}/save-order`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

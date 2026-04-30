@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/CategoryPage.css";
-
+import {baseUrl} from "./urls";
 function CategoryPage() {
   const { category } = useParams();
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ function CategoryPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/product")
+      .get(`${baseUrl}/product`)
       .then((res) => {
         const filtered = res.data.filter(
           (p) =>
@@ -33,7 +33,7 @@ function CategoryPage() {
             onClick={() => navigate(`/product/${p._id}`)} 
           >
             <img
-              src={`http://localhost:3001/images/${p.file}`}
+              src={`${baseUrl}/images/${p.file}`}
               alt={p.name}
               style={{
                 width: "120px", 

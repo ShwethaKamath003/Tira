@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Cart.css";
-
+import {baseUrl} from "./urls";
 function Cart() {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);
@@ -74,7 +74,7 @@ function Cart() {
               <img
                 src={
                   item?.file
-                    ? `http://localhost:3001/images/${item.file}`
+                    ? `${baseUrl}/images/${item.file}`
                     : "https://via.placeholder.com/100"
                 }
                 alt=""

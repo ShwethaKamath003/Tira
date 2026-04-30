@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/ViewProduct.css";
-
+import {baseUrl} from "./urls";
 function ViewProduct() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/product")
+      .get(`${baseUrl}product`)
       .then((res) => {
         console.log(res.data); 
         setProducts(res.data);
@@ -28,7 +28,7 @@ function ViewProduct() {
           products.map((product, index) => (
             <div key={index} className="view-item">
               <img
-                src={`http://localhost:3001/images/${product.file}`}
+                src={`${baseUrl}/images/${product.file}`}
                 alt={product.name}
                 className="product-image"
               />

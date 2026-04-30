@@ -2,12 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import "./css/style.css";
 import { Link, useNavigate } from "react-router-dom";
+import {baseUrl} from "./urls";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate(); // ✅ added
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,8 +19,7 @@ function Login() {
     }
 
     try {
-      const res = await axios.post("http://localhost:3001/login", {
-        email,
+      const res = await axios.post(`${baseUrl} login`,{email,
         password,
       });
 

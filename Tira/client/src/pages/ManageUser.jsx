@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import {baseUrl} from "./urls";
 function ManageUsers() {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/users");
+      const res = await axios.get(`${baseUrl}users`);
       setUsers(res.data);
     } catch (err) {
       console.log(err);
@@ -21,7 +21,7 @@ function ManageUsers() {
     if (!window.confirm("Delete this user?")) return;
 
     try {
-      await axios.delete(`http://localhost:3001/users/${id}`);
+      await axios.delete(`${baseUrl}users/${id}`);
       fetchUsers();
     } catch (err) {
       console.log(err);

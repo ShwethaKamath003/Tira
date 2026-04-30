@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/AddProduct.css";
-
+import {baseUrl} from "./urls";
 function AddProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -28,7 +28,7 @@ function AddProduct() {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:3001/upload", formData);
+      await axios.post(`${baseUrl}/upload`, formData);
       alert("Product added successfully");
 
       setName("");
