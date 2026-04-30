@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../css/style.css";
 import { useNavigate } from "react-router-dom";
-import {baseUrl} from "./pages/Urls";
+import { baseUrl } from "../Urls";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

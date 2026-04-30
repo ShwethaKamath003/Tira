@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../css/ManageProduct.css";
 import { useNavigate } from "react-router-dom";
-import {baseUrl} from "./pages/Urls";
+import { baseUrl } from "../Urls";
 function ManageProducts() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);

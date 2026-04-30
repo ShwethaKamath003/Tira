@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/editProduct.css";
-import {baseUrl} from "./pages/Urls";
+import { baseUrl } from "../Urls";
 function EditProduct() {
   const { id } = useParams(); 
   const navigate = useNavigate();

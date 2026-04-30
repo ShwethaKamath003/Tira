@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {baseUrl} from "./pages/Urls";
+import { baseUrl } from "../Urls";
 function ManageOrders() {
   const [orders, setOrders] = useState([]);
   const fetchOrders = async () => {
