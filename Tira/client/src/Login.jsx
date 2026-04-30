@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./css/style.css";
 import { Link, useNavigate } from "react-router-dom";
-import { baseUrl } from "../Urls";
+import { baseUrl } from "./Urls";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ function Login() {
     }
 
     try {
-      const res = await axios.post(`${baseUrl} login`,{email,
+      const res = await axios.post(`${baseUrl}/login`,{email,
         password,
       });
 
