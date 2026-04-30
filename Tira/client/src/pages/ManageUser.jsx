@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./Urls";
 function ManageUsers() {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get(`${baseUrl}users`);
+      const res = await axios.get(`${baseUrl}/users`);
       setUsers(res.data);
     } catch (err) {
       console.log(err);

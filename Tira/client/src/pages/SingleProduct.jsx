@@ -9,7 +9,7 @@ function SingleProduct() {
 
   useEffect(() => {
     axios
-      .get(`${baseUrl}products/${id}`)
+      .get(`${baseUrl}/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -39,7 +39,7 @@ function SingleProduct() {
   return (
     <div>
       <img
-        src={`${baseUrl}images/${product.file}`}
+        src={`${baseUrl}/images/${product.file}`}
         width="300"
       />
 

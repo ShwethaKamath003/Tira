@@ -73,7 +73,7 @@ function Checkout() {
 
     // ---------------- COD ----------------
     if (form.payment === "COD") {
-      await fetch(`${baseUrl}save-order`, {
+      await fetch(`${baseUrl}/save-order`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -197,7 +197,7 @@ function Checkout() {
 
         {cart.map((item, i) => (
           <div key={i}>
-            <img src={`http://localhost:3001/images/${item.file}`} width="80" />
+            <img src={`${baseUrl}/images/${item.file}`} width="80" />
             <p>{item.name}</p>
             <p>Qty: {item.qty || 1}</p>
             <p>₹{item.price}</p>

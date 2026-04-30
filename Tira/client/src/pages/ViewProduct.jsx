@@ -9,7 +9,7 @@ function ViewProduct() {
 
   useEffect(() => {
     axios
-      .get(`${baseUrl}product`)
+      .get(`${baseUrl}/product`)
       .then((res) => {
         console.log(res.data); 
         setProducts(res.data);

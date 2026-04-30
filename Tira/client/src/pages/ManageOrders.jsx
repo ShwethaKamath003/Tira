@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./Urls";
 function ManageOrders() {
   const [orders, setOrders] = useState([]);
   const fetchOrders = async () => {
     try {
-      const res = await axios.get(`${baseUrl}orders`);
+      const res = await axios.get(`${baseUrl}/orders`);
       console.log(res.data); 
       setOrders(res.data);
     } catch (err) {
@@ -17,12 +17,12 @@ function ManageOrders() {
   }, []);
 
   const updateStatus = async (id, status) => {
-    await axios.put(`${baseUrl}orders/${id}`, { status });
+    await axios.put(`${baseUrl}/orders/${id}`, { status });
     fetchOrders();
   };
 
   const deleteOrder = async (id) => {
-    await axios.delete(`${baseUrl}orders/${id}`);
+    await axios.delete(`${baseUrl}/orders/${id}`);
     fetchOrders();
   };
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "../css/CategoryPage.css";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./Urls";
 function CategoryPage() {
   const { category } = useParams();
   const navigate = useNavigate();
