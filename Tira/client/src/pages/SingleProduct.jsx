@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/SingleProduct.css";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./pages/Urls";
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);

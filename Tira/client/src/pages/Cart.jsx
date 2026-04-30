@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Cart.css";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./pages/urls";
 function Cart() {
   const navigate = useNavigate();
   const [cart, setCart] = useState([]);

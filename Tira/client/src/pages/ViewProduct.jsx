@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/ViewProduct.css";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./pages/Urls";
 function ViewProduct() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();

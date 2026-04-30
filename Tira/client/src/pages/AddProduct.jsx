@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/AddProduct.css";
-import {baseUrl} from "./Urls";
+import {baseUrl} from "./pages/Urls";
 function AddProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");

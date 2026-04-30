@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Checkout.css";
-import {baseUrl} from "./urls";
+import {baseUrl} from "./pages/Urls";
 function Checkout() {
   const navigate = useNavigate();
 

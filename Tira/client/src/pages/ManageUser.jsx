@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {baseUrl} from "./Urls";
+import {baseUrl} from "./pages/Urls";
 function ManageUsers() {
   const [users, setUsers] = useState([]);
 
