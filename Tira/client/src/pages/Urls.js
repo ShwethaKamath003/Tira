@@ -1,1 +1,1 @@
-export const baseUrl="https://tira-2.onrender.com/"
+export const baseUrl = import.meta.env.VITE_API_URL;
