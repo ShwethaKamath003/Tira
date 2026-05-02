@@ -8,19 +8,31 @@ function CategoryPage() {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`${baseUrl}/product`)
-      .then((res) => {
-        const filtered = res.data.filter(
-          (p) =>
-            p.category.toLowerCase() === category.toLowerCase()
-        );
-        setProducts(filtered);
-      })
-      .catch((err) => console.log(err));
-  }, [category]);
+ useEffect(() => {
+  axios
+    .get(`${baseUrl}/product`)
+    .then((res) => {
+      console.log("API:", res.data); // 🔍 MUST CHECK THIS
 
+      // ✅ ensure it's always an array
+      const data = Array.isArray(res.data)
+        ? res.data
+        : [];
+
+      const filtered = data.filter(
+        (p) =>
+          p?.category &&
+          category &&
+          p.category.toLowerCase().trim() === category.toLowerCase().trim()
+      );
+
+      setProducts(filtered);
+    })
+    .catch((err) => {
+      console.log("Error:", err);
+      setProducts([]);
+    });
+}, [category]);
   return (
     <div className="category-page">
       <h2>{category} Products</h2>
