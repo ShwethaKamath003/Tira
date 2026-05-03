@@ -28,7 +28,7 @@ const navigate = useNavigate();
     }
 
     try {
-      const res = await axios.post(`${baseUrl}register`, {
+      const res = await axios.post(`${baseUrl}/register`, {
         email,
         phone: mobile,
         password,
