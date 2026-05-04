@@ -19,10 +19,16 @@ app.use("/images", express.static("public/Images"));
 app.get("/", (req, res) => {
   res.send("Tira backend is running ");
 });
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Mongo DB connected"))
-  .catch((err) => console.log(err));
+mongoose.connect('mongodb://localhost:27017/tira')
+  .then(() => console.log("MongoDB Local Connected - port 27017"))
+  .catch((err) => {
+    console.log("Local MongoDB Error - Install MongoDB first:", err.message);
+    console.log("Run these:");
+    console.log("mkdir data\\db");
+    console.log("mongod --dbpath data\\db");
+    console.log("(New terminal)");
+    console.log("Double-click install-mongodb.bat if mongod not found");
+  });
 app.post("/register", async (req, res) => {
   try {
 
